@@ -7,14 +7,17 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     public function up(): void
-    {
-        Schema::create('jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('salary');
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('jobs', function (Blueprint $table) {
+        $table->id();
+        $table->string('title');
+        $table->string('company');
+        $table->string('location');
+        $table->string('salary')->nullable();
+        $table->text('description');
+        $table->timestamps();
+    });
+}
 
     public function down(): void
     {
